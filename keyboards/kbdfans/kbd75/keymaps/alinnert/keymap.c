@@ -12,22 +12,9 @@ enum layers {
 
 enum custom_keycodes {
   M_GRV = SAFE_RANGE,
+  M_NUBS,
   M_DSPC
 };
-
-// KEY OVERRIDES
-// On BASE_WIN: Ctrl + Tab => Alt + Tab
-// const key_override_t alt_tab = ko_make_with_layers(
-//   MOD_MASK_CTRL,
-//   KC_TAB,
-//   A(KC_TAB),
-//   BASE_WIN
-// );
-
-// const key_override_t **key_overrides = (const key_override_t *[]){
-//   &alt_tab,
-//   NULL
-// };
 
 // LEDs
 void set_os_led(bool is_mac) {
@@ -104,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [BASE_MAC] = LAYOUT(
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
-    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
+    KC_NUBS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,
     _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,
     MO(SYS_MAC),_______,_______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,                      _______,  _______,
     _______,  MO(CHAR_MAC),_______,_______, _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,            _______,  _______,
@@ -151,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
     XXXXXXX,    XXXXXXX,    XXXXXXX,    S(KC_BSLS), S(KC_2),    S(KC_SLSH), XXXXXXX,    A(KC_5),    A(KC_6),    S(KC_RBRC), S(KC_5),    XXXXXXX,    XXXXXXX,    XXXXXXX,                XXXXXXX,
-    XXXXXXX,    A(KC_L),    S(KC_4),    KC_NUBS,    S(KC_NUBS), S(KC_7),    A(S(KC_7)), A(KC_8),    A(KC_9),    A(KC_N),    A(KC_7),    XXXXXXX,                            XXXXXXX,    XXXXXXX,
+    XXXXXXX,    A(KC_L),    S(KC_4),    KC_GRV,     S(KC_GRV),  S(KC_7),    A(S(KC_7)), A(KC_8),    A(KC_9),    A(KC_N),    A(KC_7),    XXXXXXX,                            XXXXXXX,    XXXXXXX,
     XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_BSLS,    M_GRV,      S(KC_6),    S(KC_0),    S(KC_MINS), S(KC_1),    XXXXXXX,    XXXXXXX,                XXXXXXX,    XXXXXXX,
     XXXXXXX,    XXXXXXX,    XXXXXXX,                            XXXXXXX,    XXXXXXX,    KC_SPC,                             XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX
   ),
